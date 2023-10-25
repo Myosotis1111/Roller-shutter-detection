@@ -1,0 +1,136 @@
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%        TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.35\textwidth]{Figures/Logo_TH_Luebeck_new}
+\end{figure}
+
+ \hfill\break\\[0cm]
+ 
+{\LARGE \bfseries \ttitle}\\[1.5cm] % Thesis title
+
+
+Submitted by\\[0.5cm]
+\authorname % Author name - remove the \href bracket to remove the link
+
+\vspace{2.3em}
+
+Thesis Advisor\\[0.5cm]
+\supname % Supervisor name - remove the \href bracket to remove the link 
+ 
+\vspace{2.3em} 
+\textsc{
+\programname\\
+\pillarname\\
+\universityname}\\[1.5cm] % Research group name and department name
+ 
+{A thesis submitted in fulfillment of the requirement to the degree\\\degreename}\\[1.7cm] % University requirement text
+
+ 
+\the\year{}\\ % Date
+
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%        DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname}
+
+\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item This work was done wholly or mainly conducted while in candidature for a degree at \universityname{}.
+\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item Where I have consulted the published work of others, this is always clearly attributed.
+\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item I have acknowledged all main sources of help.
+\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+ 
+\noindent Signed:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+ 
+\noindent Date:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+\end{declaration}
+
+\cleardoublepage
+
+
+%----------------------------------------------------------------------------------------
+%        ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+\input{1-abstract}
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%        ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+% Add the acknowledgements to the table of contents
+\addchaptertocentry{\acknowledgementname}
+Put your acknowledgements here! This is an example:
+    
+    \paragraph{Acknowledgments by Horst Hellbrück}
+    I want to thank all staff members and students that have participated in this document by giving tips or by asking questions. When I have started this guide in 2009 with a vague idea in mind, I could not foresee that this document becomes such a great help for all the students. My special thanks go to Zhi Haolin and Ren Zhong from the international study program \programname{} at \universityname{} together with ECUST in Shanghai. They have written most of the texts and provided references and figures. Without their valuable contribution this guide would have stayed at a conceptual level.
+    
+    \paragraph{Acknowledgements by Ren Zhong}
+    I would like to express my gratitude to Prof. Dr.-Ing Horst Hellbrück, who wrote the first draft of this document, and offered me such a great opportunity to contribute to this meaningful work.
+    
+    \paragraph{Acknowledgements by Andreas Hanemann}
+    I would like to thank the people who have worked on this document earlier (Horst Hellbrück, Zhi Haolin, Aida Bahta, Ren Zhong). Some advice from Hermann Hochhaus and Hans-Günter Kunze has also been included into the document.
+    
+    \paragraph{Acknowledgements by Denys Matthies}
+    I would like to particularly thank Martin Ochoa, Vel, Johannes Böttcher, Steve Gunn, Sunil Patand, and Benjamin Petry for providing the basis for this new layout. Thank you!
+    
+    \paragraph{} The authors hope that students can benefit from the document and that more students may add contributions to this document to improve it.
+
+
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%        LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%        ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+\textbf{CI} & \textbf{C}ochlea \textbf{I}mplant\\
+\textbf{DMI} & \textbf{D}igital \textbf{M}usic \textbf{I}nstrument\\
+\textbf{HCI} & \textbf{H}uman \textbf{C}omputer \textbf{I}nteraction\\
+
+\end{abbreviations}
+
+
+%----------------------------------------------------------------------------------------
+%        DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedicated to my someone,\\who you really appreciate to have in your life.}
+

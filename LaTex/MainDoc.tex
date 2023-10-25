@@ -1,0 +1,466 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thesis Template
+% LaTeX Template
+% Version 1.0 (29/12/18)
+%
+%
+% This template is based on a template downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% which in turn was based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+% 
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------
+%        PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%---------------
+
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+onehalfspacing, % Single line spacing, alternatives: singlespacing, onehalfspacing or doublespacing
+% draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+]{Thesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{titlesec}
+\usepackage{palatino} % Use the Palatino font by default
+\usepackage{charter} % Use the Charter font by default
+
+\usepackage[backend=bibtex,style=ieee,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage{epigraph}
+
+\addbibresource{library.bib} % The filename of the bibliography
+\DeclareBibliographyCategory{ignore} % for entries that should not appear in the bibliography but are cited
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+%\usepackage{afterpage} 
+
+% For adding todos to the text
+\usepackage{xcolor} 
+\usepackage[author={Your Name}]{pdfcomment}
+
+% For figures in tables to align the vertically
+\usepackage{mwe}
+\usepackage[export]{adjustbox}
+
+% for the checkmark
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% Reset link color. For more information and settings:
+% http://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+\hypersetup{
+colorlinks = true,
+linkcolor = black,
+citecolor = gray,
+urlcolor = black
+}
+
+%----------------------------------------------------------------------------------------
+%        MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+        paper=a4paper, % Change to letterpaper for US letter
+        inner=2.54cm, % Inner margin
+        outer=2.8cm, % Outer margin
+        bindingoffset=1cm, % Binding offset
+        top=2.5cm, % Top margin
+        bottom=2.5cm, % Bottom margin
+        %showframe,% show how the type block is set on the page
+}
+\emergencystretch 3em
+
+%----------------------------------------------------------------------------------------
+%        THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Building Management: Machine Vision} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Dr.-Ing. Ralph  \textsc{Hänsel}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+%\currentYear{} % When you hand it in
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Bachelor of Science (B.Sc.)} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\program{Information Technology} % the programm you are enrolled in
+\author{Xinchen \textsc{YANG}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+\university{Technical University of Applied Sciences Lübeck}
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\pillar{Department of Electrical Engineering and Computer Science} % Pillar
+
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+
+% Definition how figures, sections tables should be referenced
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{Figure}{Figure}
+\crefname{section}{Section}{Section}
+\crefname{table}{Table}{Table}
+
+%----------------------------------------------------------------------------------------
+%        CUSTOMIZED COMMANDS AND ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
+% CHANGE CHAPTER HEADING
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Rejne]{fncychap}
+%\ChTitleVar{\centering\HUGE\bfseries\selectfont}
+\ChNameVar{\centering\small\fontseries{b}\selectfont}
+\ChTitleVar{\centering\LARGE\bfseries}
+%\ChNameUpperCase, \ChRuleWidth{1pt}
+%\ChNumVar{\fontsize{36}{162}\bfseries}
+%\ChNameAsIs
+%\ChRuleWidth{0.5pt}
+%\ChNameUpperCase
+%\ChNameVar{\centering\Huge\rm\bfseries}
+%\ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
+%\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont} 
+%\ChTitleVar{\Huge\bfseries\m} 
+\ChRuleWidth{2pt}
+
+\usepackage{threeparttable}
+\usepackage{xspace} % for spaces defined commands
+\usepackage{textcomp} % for degree symbol
+\usepackage{rotating}
+\usepackage{needspace}
+\usepackage{pdfpages} % to include pdf pages in the appendix
+\usepackage{subfigure}
+% set counter for numbered sections to 3 so that subsubsections also get a number
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+
+
+% Adjust par indent and skip
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt plus 2pt minus 2pt}
+
+
+\makeatletter
+\renewcommand{\@chapapp}{}
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+  \def\chapquote@author{#2}%
+  \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+  \itshape}
+{\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% for global renewcommand
+\makeatletter
+\def\gnewcommand{\g@star@or@long\new@command}
+\def\grenewcommand{\g@star@or@long\renew@command}
+\def\g@star@or@long#1{% 
+  \@ifstar{\let\l@ngrel@x\global#1}{\def\l@ngrel@x{\long\global}#1}}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%        DRAFT MODE
+%----------------------------------------------------------------------------------------
+
+\newboolean{isDraft}
+\setboolean{isDraft}{false}
+
+%----------------------------------------------------------------------------------------
+%        MY OWN COMMANDS
+%----------------------------------------------------------------------------------------
+
+% Constants, e.g., initial set of papers for a systematic literature review
+\newcommand{\slrainitialset}[0]{1679\xspace}
+\newcommand{\slrafinalset}[0]{81\xspace}
+\newcommand{\slrpfinalset}[0]{23\xspace}
+\newcommand{\slruniquemsss}[0]{77\xspace}
+
+
+\newcommand{\rqone}[0]{What are important considerations for designing Music Sensory-Substitution Systems that provide an enjoyable music-making experience?}
+\newcommand{\rqtwo}[0]{What are the current capabilities, strategies, and challenges of deaf people who are starting to play an instrument?}
+\newcommand{\rqthree}[0]{How can all the nontrivial requirements of providing real-time feedback, adaptability, and free limb movement be addressed with a single design?}
+\newcommand{\rqfour}[0]{How can technology be used to provide more information about rhythm to a deaf person during a music-making activity?}
+
+\newcommand{\rqcite}[2]{\q{#2} (\textbf{RQ #1})}
+
+
+% For approximation
+\let\oldapprox=\approx 
+\renewcommand{\approx}[0] {$\oldapprox$}
+
+% For quotes
+\newcommand{\q}[1] {\textit{``#1''}\xspace}
+
+% For subsubsubsections
+\newcommand{\subsubsubsection}[1] {
+\par
+\needspace{1em}
+\textit{#1}\\}
+
+% This makes all citations' authors gray
+% Also see \hypersetup{citecolor} !
+\let\oldcite=\citealp 
+\renewcommand{\citep}[2][]{(\textcolor{gray}{\oldcite[#1]{#2}})}
+
+% to avoid that big figures directly get their own page
+\renewcommand{\floatpagefraction}{.8}
+
+% Creates the label for a chapter
+% Param1: label for the appendix
+\newcommand{\chaplabel}[1]{\label{ch:#1}}
+
+% Creates the reference for an appendix
+% Param1: label of the appendix
+\newcommand{\chapref}[1]{Chapter~\ref{ch:#1}}
+
+% Creates the label for an appendix
+% Param1: label for the appendix
+\newcommand{\alabel}[1]{\label{app:#1}}
+
+% Creates the reference for an appendix
+% Param1: label of the appendix
+\newcommand{\aref}[1]{Appendix~\ref{app:#1}}
+
+% Creates an appendix header
+% Param1: label of the appendix
+\newcommand{\aheader}[2]{\section{#1}\alabel{#2}}
+
+% Creates the label for a section 
+% Param1: name for the section
+\newcommand{\seclabel}[1]{\label{sec:\thechapter:#1}}
+
+% Creates the reference for a section 
+% Param1: (optional) chapter
+% Param2: name of the section
+\newcommand{\secref}[2][\thechapter]{\cref{sec:#1:#2}}
+
+% Creates the reference for a figure 
+% Param1: (optional) chapter
+% Param2: name of the figure
+% Param3: subfigure, e.g. a, b, c
+% e.g.: \fref[1]{feedbackloop}{} - if you are outside chapter 1 without subfigure
+% \fref{feedbackloop}{a} - if you are inside chapter 1 with reference to subfigure a
+\newcommand{\fref}[3][\thechapter]{\cref{fig:#1:#2}#3\xspace}
+
+
+% Param1: (optional) width of the figure in relation to \textwidth
+% Param2: figure name
+% Param3: caption
+% Param4: label name
+% Usage: \finsert[0.6]{feedback-loop}{Here you see a feedback loop}{feedbackloop}
+\newcommand{\finsert}[4][1]{
+\begin{figure}[t]
+\centering
+\includegraphics[width=#1\textwidth]{#2}
+\caption{#3}\label{fig:\thechapter:#4}
+\end{figure}
+}
+
+% Same as \finsert just that the figure will be placed at point of insert
+\newcommand{\fhere}[4][1]{
+\begin{figure}[ht]
+\centering
+\includegraphics[width=#1\textwidth]{#2}
+\caption{#3}\label{fig:\thechapter:#4}
+\end{figure}
+}
+
+
+
+% Is used by fancytable environment
+\newenvironment{nstabbing}
+{\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\tabbing}{\endtabbing}
+\newcommand{\fancytablecaption}[0]{}
+\newcommand{\fancytablecitestring}[0]{}
+\newcommand{\fancytablestretchvalue}[0]{1.5}
+\newcommand{\fancytablecaptionstring}[0]{}
+\newcommand{\fancytablestretch}[1]{\renewcommand{\fancytablestretchvalue}[0]{#1}}
+\newcommand{\fancytablelegend}[1]{\renewcommand{\fancytablecitestring}[0]{#1}}
+
+% \end{fancytable}
+\newenvironment{fancytable}[5][1]
+{
+  \grenewcommand{\fancytablecaption}[0]{\caption{#3}\label{tab:\thechapter:#4}}
+
+\begin{table}[!htb]
+  \footnotesize
+  \centering
+  \def\arraystretch{\fancytablestretchvalue}
+  \begin{tabular*}{#1\textwidth}{#2}
+    \hline
+      #5\\
+    \hline
+}
+{
+    \hline
+  \end{tabular*}
+\ifx&\fancytablecitestring&%
+
+\else
+\begin{nstabbing}
+  \fancytablecitestring
+\end{nstabbing}
+\fi
+  \fancytablecaption
+\grenewcommand{\fancytablecitestring}[0]{}
+\grenewcommand{\fancytablestretchvalue}[0]{1.5}
+\end{table}
+}
+
+% Is used by fancytable environment
+
+\newcommand{\fancytablecaptionz}[0]{}
+\newcommand{\fancytablecitestringz}[0]{}
+\newcommand{\fancytablestretchvaluez}[0]{1.5}
+\newcommand{\fancytablecaptionstringz}[0]{}
+\newcommand{\fancytablestretchz}[1]{\renewcommand{\fancytablestretchvaluez}[0]{#1}}
+\newcommand{\fancytablelegendz}[1]{\renewcommand{\fancytablecitestringz}[0]{#1}}
+
+\newenvironment{fancytablez}[5][1]
+{
+  \ifx&#3&%
+\grenewcommand{\fancytablecaptionz}[0]{\caption{\fancytablecaptionstringz~(cont.)}}
+\addtocounter{table}{-1}
+\else
+  \grenewcommand{\fancytablecaptionstringz}[0]{#3}
+  \grenewcommand{\fancytablecaptionz}[0]{\caption{#3}\label{tab:\thechapter:#4}}
+\fi
+
+\begin{table}[!htb]
+  \footnotesize
+  \centering
+  \def\arraystretch{\fancytablestretchvaluez}
+  \begin{tabular*}{#1\textwidth}{#2}
+    \hline
+      #5\\
+    \hline
+}
+{
+    \hline
+  \end{tabular*}
+\ifx&\fancytablecitestringz&%
+
+\else
+\begin{nstabbing}
+  \fancytablecitestringz
+\end{nstabbing}
+\fi
+  \fancytablecaptionz
+\end{table}
+}
+
+% Creates the reference for a table 
+% Param1: (optional) chapter
+% Param2: name of the table
+\newcommand{\tref}[2][\thechapter]{\cref{tab:#1:#2}}
+
+% Command to define how a footcite should look like
+% Param1: citation name
+\renewcommand{\footcite}[1]{\footnote{\citefield{#1}{title}. \citeurl{#1}. Last accessed on \citefield{#1}{urlday}/\citefield{#1}{urlmonth}/\citefield{#1}{urlyear}.}}
+
+% Commands to add todos, things I have to change and revision to the document as pdf commands
+% if the boolean ``isDraft'' is set to false, those comments will be omitted!
+
+% Param1: the reference to add, may be empty
+\newcommand{\addref}[1]{
+\pdfmarkupcomment[markup=Highlight,color=yellow]{(ref)}{Todo: add reference(s): #1}
+}
+
+% Param1: comment that describes the todo
+\newcommand{\todo}[1]{
+\pdfcomment[color=yellow,icon=Comment]{#1}
+}
+
+% Param1: comment that describes what to add later
+\newcommand{\addlater}[1]{
+\pdfmarkupcomment[markup=Highlight,color=yellow]{[...]}{#1}
+}
+
+% Param1: text that has to be changed later
+\newcommand{\changelater}[1]{
+\pdfmarkupcomment[markup=Highlight,color=yellow]{#1}{Change later}
+}
+
+% Param1: text that has to be changed later
+% Param2: comment that describes what to change
+\newcommand{\change}[2]{
+\pdfmarkupcomment[markup=Highlight,color=yellow]{#1}{#2}
+}
+
+% Param1: text that has to be revised
+% Param2: comment that describes what or how to revise
+\newcommand{\revise}[2]{
+\pdfmarkupcomment[markup=StrikeOut,color=red]{#1}{#2}
+}
+
+% redefines all todo commands to NOT add comments in case this is the final version
+\ifthenelse{\boolean{isDraft}}{}
+{
+\renewcommand{\todo}[1]{}
+\renewcommand{\addref}[1]{}
+\renewcommand{\addlater}[1]{}
+\renewcommand{\changelater}[1]{#1}
+\renewcommand{\change}[2]{#1}
+\renewcommand{\revise}[2]{#1}
+}
+
+%--------------------------------------------------------------------------
+%        THESIS CONTENT - COVER
+%---------------------------------------------------------------------------------
+\begin{document}
+\input{0-foreword}
+
+%--------------------------------------------------------------------------
+%        THESIS CONTENT - CHAPTERS
+%---------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+
+\input{ch1}
+\input{ch2}
+\input{ch3}
+\input{ch4}
+\input{ch5}
+\input{ch6}
+
+%----------------------------------------------------------------------------------------
+%        THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+%\include{appendix}
+
+%----------------------------------------------------------------------------------------
+%        BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+
+\printbibliography[title={References},heading=bibintoc,notcategory=ignore]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  

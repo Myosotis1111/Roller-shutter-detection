@@ -1,0 +1,71 @@
+upper_1 open
+upper_2 open
+upper_3 open
+upper_4 closed 27.421875
+upper_5 closed 26.09375
+upper_6 closed 62.8125
+upper_7 closed 46.09375
+upper_8 open
+upper_9 closed 67.5
+upper_10 closed 61.328125
+upper_11 closed 61.484375
+upper_12 open
+upper_13 open
+upper_14 closed 17.34375
+upper_15 closed 16.5625
+upper_16 not_detected
+upper_17 not_detected
+upper_18 not_detected
+upper_19 not_detected
+upper_20 not_detected
+upper_21 not_detected
+upper_22 not_detected
+upper_23 not_detected
+upper_24 not_detected
+upper_25 not_detected
+upper_26 not_detected
+upper_27 not_detected
+middle_1 open
+middle_2 open
+middle_3 open
+middle_4 closed 36.40625
+middle_5 closed 72.8125
+middle_6 open
+middle_7 closed 85.3125
+middle_8 open
+middle_9 open
+middle_10 open
+middle_11 open
+middle_12 open
+middle_13 open
+middle_14 closed 66.25
+middle_15 blocked
+middle_16 not_detected
+middle_17 not_detected
+middle_18 not_detected
+middle_19 not_detected
+middle_20 not_detected
+middle_21 not_detected
+middle_22 not_detected
+middle_23 not_detected
+middle_24 not_detected
+middle_25 not_detected
+middle_26 not_detected
+middle_27 not_detected
+lower_1 closed 96.40625
+lower_2 closed 69.296875
+lower_3 closed 69.6875
+lower_4 closed 70.234375
+lower_5 closed 70.546875
+lower_6 closed 99.84375
+lower_7 closed 99.84375
+lower_8 open
+lower_9 open
+lower_10 closed 98.4375
+lower_11 closed 98.90625
+lower_12 closed 69.375
+lower_13 closed 66.71875
+lower_14 closed 68.28125
+lower_15 not_detected
+lower_16 not_detected
+lower_17 not_detected
