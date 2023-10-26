@@ -2,6 +2,8 @@
 
 - # For User: detection
 
+Hello!
+
 1. After the project is successfully imported and the environment is established (see [instructions](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision#python-project) at homepage), **select** [**main.py**](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/blob/main/detection_platform/main.py) **and run**.
 
 1. upload images by **clicking "Upload Images"** button with corresponding window location text files. Sample images can be found in [testset](https://git.mylab.th-luebeck.de/xinchen.yang/building-management-machine-vision/-/tree/main/detection_platform/testset). Up to three images can be uploaded at a time.
