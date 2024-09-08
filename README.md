@@ -10,7 +10,7 @@ Final version of the complete thesis uploaded.
 
 Detailed evaluation result on the test dataset uploaded.
                
-![Software GUI](GUI_screenshot.png)
+![Software GUI](software_screenshot.png)
 
 # Python project：
 
